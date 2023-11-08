@@ -2,28 +2,58 @@
 
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/410506d815.js" crossorigin="anonymous"></script>
 </head>
 
 <body style="background-color: #e3e7eb; margin: 0px; padding: 0px; font-family: 'Roboto', sans-serif;">
-    <div style="background-color: #ffff; margin-top: 10%; margin-left: 5%; margin-right: 5%; margin-bottom: 10%;">
-        <div style="padding-left: 25%; padding-right: 25%; padding-top: 5%; padding-bottom: 5%;">
-            <div>
-                <h1>Hi Welcome to my hut</h1>
+
+    <nav class="navbar-container">
+        <div class="navbar-div">
+            <ul class="navbar-ul">
+                <li>
+                    <img src="assets/image/dumbways.png" style="height: 50px;" />
+                </li>
+                <li class="nav-link">
+                    <a href="index.html" id="active">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-link" id="myProject">
+                    <a href="#">
+                        My Project
+                    </a>
+                </li>
+            </ul>
+            <div class="navbar-rightcontent">
+                <a href="contact.html" class="btn-contact">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="div-body">
+        <div class="div-body-two">
+            <div class="div-body-main">
+                <h1>Hi Welcome to my hut</h1><br>
                 <p style="text-align: justify;">Hello, I am a dedicated and enthusiastic fullstack developer with a
                     strong
                     educational
                     background in Computer Science. My passion for coding drives me to create innovative
-                    and efficient solutions for various web projects.</p>
-                <button class="redirect-button" onclick="window.location.href='https://wa.me/62895385067037'"
-                    style="background-color: #111727; color: white; padding-left: 20px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px; border-radius: 30px;">
-                    Contact
-                </button><br><br>
-                <span>
-                    <a style="margin-right: 10px;">download CV</a>
-                    <a href="assets/file/CV.pdf" style="color: black;"><i class="fa-solid fa-download"></i></a><br>
-                </span><br><br>
-                <div style="text-align: center; font-size: 36px;">
+                    and efficient solutions for various web projects.</p><br>
+                <div style="display: flex; flex-direction: row;">
+                    <!-- <button class="btn-contact-main" onclick="window.location.href='contact.html'">
+                        Contact
+                    </button> -->
+                    <a href="contact.html" class="btn-contact-main">Contact</a>
+                    <span id="downloadCV">
+                        <a style="margin-right: 5px;">download CV</a>
+                        <a href="assets/file/CV.pdf" style="color: black;"><i class="fa-solid fa-download"></i></a><br>
+                    </span>
+                </div>
+
+                <br><br>
+                <div style="text-align: left; font-size: 36px; margin-bottom: 0%;">
                     <span>
                         <a href="https://www.linkedin.com/in/filza-elang-buana-2a321a164/"
                             style="margin-right: 10px; color: black;"><i class="fa-brands fa-linkedin"></i></a>
@@ -36,15 +66,13 @@
                     </span>
                 </div>
             </div><br>
-            <div
-                style="width: 50%; background-color: white; margin: auto; border-radius: 5px; padding-bottom: 5px; box-shadow: 1px 1px 10px 10px #e0e0e0;">
+            <div class="div-card">
                 <!-- card -->
                 <div> <!-- image -->
                     <img src="assets/image/PP.jpg"
                         style="width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
                 </div>
-                <div style="text-align: center; margin-top: 5px; margin-bottom: 5px;">
-                    <!-- title -->
+                <div style="text-align: center; margin-top: 5px; margin-bottom: 5px;"> <!-- title -->
                     <a style="font-size: 24; font-weight: bold;">Filza Elang Buana</a> <br>
                     <a style="font-size: 18;">Fullstack Developer</a>
                 </div>
