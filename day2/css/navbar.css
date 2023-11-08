@@ -29,17 +29,17 @@
     display: flex;
     width: 100%;
     justify-content: end;
+
 }
 
 .btn-contact {
-    width: 100px;
-    text-decoration: none;
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
     background-color: #111727;
     color: white;
-    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
 }
 
 #myProject {
