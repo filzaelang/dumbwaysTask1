@@ -37,25 +37,26 @@
         <form class="container-form">
             <h1 class="heading-one">GET IN TOUCH</h1>
             <label class="label-contact">Name</label>
-            <input type="text" class="input-contact">
+            <input type="text" class="input-contact" id="inputName">
             <label class="label-contact">Email</label>
-            <input type="email" class="input-contact">
+            <input type="email" class="input-contact" id="inputEmail">
             <label class="label-contact">Phone Number</label>
-            <input type="text" class="input-contact">
+            <input type="text" class="input-contact" id="inputPhone">
             <label class="label-contact">Subject</label>
-            <select class="input-contact">
+            <select class="input-contact" id="inputSubject">
                 <option></option>
                 <option>Frontend Developer</option>
                 <option>Backend Developer</option>
                 <option>Fullstack Developer</option>
             </select>
             <label class="label-contact">Your Message</label>
-            <textarea class="input-contact"></textarea>
+            <textarea class="input-contact" id="inputMessage"></textarea>
             <div class="right-position">
-                <input type="button" value="submit" class="submit-button" />
+                <input type="button" value="submit" class="submit-button" onclick="submitData()" />
             </div>
         </form>
     </div>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
