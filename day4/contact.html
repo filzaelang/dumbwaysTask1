@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap">
+</head>
+
+<body>
+    <nav class="navbar-container">
+        <div class="navbar-div">
+            <ul class="navbar-ul">
+                <li>
+                    <img src="assets/image/dumbways.png" style="height: 50px;" />
+                </li>
+                <li class="nav-link">
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-link" id="myProject">
+                    <a href="myProject.html">
+                        My Project
+                    </a>
+                </li>
+            </ul>
+            <div class="navbar-rightcontent">
+                <a href="contact.html" class="btn-contact">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <form class="container-form">
+            <h1 class="heading-one">GET IN TOUCH</h1>
+            <label class="label-contact">Name</label>
+            <input type="text" class="input-contact" id="inputName">
+            <label class="label-contact">Email</label>
+            <input type="email" class="input-contact" id="inputEmail">
+            <label class="label-contact">Phone Number</label>
+            <input type="text" class="input-contact" id="inputPhone">
+            <label class="label-contact">Subject</label>
+            <select class="input-contact" id="inputSubject">
+                <option></option>
+                <option>Frontend Developer</option>
+                <option>Backend Developer</option>
+                <option>Fullstack Developer</option>
+            </select>
+            <label class="label-contact">Your Message</label>
+            <textarea class="input-contact" id="inputMessage"></textarea>
+            <div class="right-position">
+                <input type="button" value="submit" class="submit-button" onclick="submitData()" />
+            </div>
+        </form>
+    </div>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>
