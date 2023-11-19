@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/testimonials.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/410506d815.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar-container">
+        <div class="navbar-div">
+            <ul class="navbar-ul">
+                <li>
+                    <img src="assets/image/dumbways.png" style="height: 50px;" />
+                </li>
+                <li class="nav-link nav-collapse">
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-link nav-collapse" id="myProject">
+                    <a href="myProject.html">
+                        My Project
+                    </a>
+                </li>
+                <li class="nav-link nav-collapse active2">
+                    <a href="testimonials.html">
+                        Testimonials
+                    </a>
+                </li>
+            </ul>
+            <div class="navbar-rightcontent">
+                <a href="contact.html" class="btn-contact nav-collapse">Contact Me</a>
+                <i class="fa-solid fa-bars fa-2x" style="cursor: pointer;" id="hamburger-button"
+                    onclick="openHamburger()"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="hamburger-nav-container" id="hamburger-nav-container">
+        <a href="index.html">Home</a>
+        <a href="myProject.html">My Project</a>
+        <a href="contact.html">Contact Me</a>
+        <a href="testimonials.html" class="active">Testimonials</a>
+    </div>
+
+    <div class="container">
+        <h1>My Testimonials</h1>
+        <div class="container-rating">
+            <h2> Rating By Star</h2>
+            <div class="rating">
+                <button class="rating-btn" onclick="allTestimonials()">
+                    All
+                </button>
+                <button class="rating-btn" onclick="filterTestimonials(1);">
+                    1 <i class="fa-solid fa-star"></i>
+                </button>
+                <button class="rating-btn" onclick="filterTestimonials(2);">
+                    2 <i class="fa-solid fa-star"></i>
+                </button>
+                <button class="rating-btn" onclick="filterTestimonials(3);">
+                    3 <i class="fa-solid fa-star"></i>
+                </button>
+                <button class="rating-btn" onclick="filterTestimonials(4);">
+                    4 <i class="fa-solid fa-star"></i>
+                </button>
+                <button class="rating-btn" onclick="filterTestimonials(5);">
+                    5 <i class="fa-solid fa-star"></i>
+                </button>
+            </div>
+        </div>
+        <section class="testimonials" id="testimonials">
+            <!-- <div class="testimonial">
+                    <img src="assets/profile/profile.png" class="profile-testimonial" />
+                    <p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget lectus eu
+                        libero venenatis gravida eget vel odio."</p>
+                    <p class="author">- Surya Elidanto</p>
+                </div> -->
+        </section>
+    </div>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/testimonials.js"></script>
+</body>
+
+</html>
