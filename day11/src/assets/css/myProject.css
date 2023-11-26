@@ -40,7 +40,7 @@ form label {
     box-sizing: border-box;
 }
 
-img {
+#img {
     width: 92%;
     object-fit: fill;
     margin: 5%;
