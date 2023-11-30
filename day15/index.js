@@ -60,6 +60,7 @@ async function home(req, res) {
     for (const ob of obj) {
         const duration = await calculateDuration(ob.start_date, ob.end_date);
         ob.duration = duration;
+        ob.isLogin = req.session.isLogin;
     }
 
     const isLogin = req.session.isLogin
@@ -208,6 +209,13 @@ async function register(req, res) {
     console.log("Email:", email)
     console.log("Password:", password)
 
+    // Check if email is already registered
+    const emailExists = await isEmailRegistered(email);
+    if (emailExists) {
+        req.flash('danger', 'Email sudah terdaftar!');
+        return res.redirect('/register');
+    }
+
     const salt = 10
 
     bcrypt.hash(password, salt, async (err, hash) => {
@@ -266,6 +274,15 @@ async function formatedDate(date) {
     });
 
     return formattedDate;
+}
+
+// Function to check if email is already registered
+async function isEmailRegistered(email) {
+    const query = `SELECT COUNT(*) AS count FROM users WHERE email = '${email}'`;
+    const result = await sequelize.query(query, { type: QueryTypes.SELECT });
+    const count = result[0].count;
+
+    return count > 0;
 }
 
 
