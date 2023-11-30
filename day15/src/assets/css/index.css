@@ -1,0 +1,7 @@
+.div-card {
+    width: 200px;
+    margin: auto;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    box-shadow: 1px 1px 10px 10px #e0e0e0;
+}
