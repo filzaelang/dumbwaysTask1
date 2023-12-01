@@ -69,7 +69,7 @@ async function home(req, res) {
     tb_projects.end_date,
     tb_projects.description,
     tb_projects.image,
-    tb_projects."nodeJs",  -- Kolom "nodeJs" diapit oleh tanda kutip ganda
+    tb_projects."nodeJs", tb_projects."reactJs", tb_projects."nextJs", tb_projects."typeScript",
     users.id AS user_id,
     users.name AS author,
     users.email
@@ -140,38 +140,29 @@ async function projectNew(req, res) {
     let image = ""
     if (req.file) {
         image = req.file.filename
+    } else {
+        // Fetch the existing image for the specified project id
+        const existingProjectQuery = `SELECT image FROM tb_projects WHERE id=${id}`;
+        const existingProjectResult = await sequelize.query(existingProjectQuery, { type: QueryTypes.SELECT });
+
+        if (existingProjectResult.length > 0) {
+            image = existingProjectResult[0].image;
+        }
     }
-    if (!image) {
-        const query = `SELECT
-        tb_projects.id,
-        tb_projects.name,
-        tb_projects.start_date,
-        tb_projects.end_date,
-        tb_projects.description,
-        tb_projects.image,
-        tb_projects."nodeJs",  -- Kolom "nodeJs" diapit oleh tanda kutip ganda
-        users.id AS user_id,
-        users.name AS author,
-        users.email
-      FROM
-        tb_projects
-      LEFT JOIN
-        users ON tb_projects."authorId" = users.id;`
-        const obj = await sequelize.query(query, { type: QueryTypes.SELECT })
-        image = obj[0].image
-    }
+
     // Ensure that boolean values are set to false if they are undefined
     const nodeJsValue = nodeJs !== undefined ? nodeJs : false;
     const nextJsValue = nextJs !== undefined ? nextJs : false;
     const reactJsValue = reactJs !== undefined ? reactJs : false;
     const typeScriptValue = typeScript !== undefined ? typeScript : false;
 
-    const query = `UPDATE tb_projects 
+    const updateQuery = `UPDATE tb_projects 
                 SET name='${name}', start_date='${startDate}', end_date='${endDate}', description='${description}', image='${image}', "nodeJs"='${nodeJsValue}', "nextJs"='${nextJsValue}', "reactJs"='${reactJsValue}', "typeScript"='${typeScriptValue}'
-                WHERE id=${id}`
-    const obj = await sequelize.query(query, { type: QueryTypes.UPDATE })
+                WHERE id=${id}`;
 
-    res.redirect('/')
+    await sequelize.query(updateQuery, { type: QueryTypes.UPDATE });
+
+    res.redirect('/');
 }
 
 async function deleteProject(req, res) {
